@@ -24,15 +24,15 @@ cancel_proj.addEventListener("click", () => {
 submit_proj.addEventListener("click", () => {
     const projectName = document.querySelector("#proj-title-input")
     const entry = project_repo.addProject(projectName.value)
-    appendProject(entry.name)
+    appendProject(entry)
     projectName.value = ""
     proj_dialogue.close()
 });
 
 function appendProject(project) {
     const proj_tab=document.createElement("div")
-    proj_tab.classList.add("project-tab")
-    proj_tab.innerText = project
+    proj_tab.classList.add("project-tab", `project-${project.id}`)
+    proj_tab.innerText = project.name
     sidebar.appendChild(proj_tab)
     console.log("Im being read")
 }
