@@ -1,4 +1,7 @@
 export function TODO(title, description, duedate, priority, notes) {
+    if (!new.target) {
+        throw Error("You must use the 'new' operator to call the constructor");
+    }
     this.title = title
     this.description = description
     this.duedate = duedate
@@ -9,14 +12,18 @@ export function TODO(title, description, duedate, priority, notes) {
 }
 
 export function Project(name) {
+    if (!new.target) {
+        throw Error("You must use the 'new' operator to call the constructor");
+    }
     this.name = name
     this.repo = []
     this.id = null
 }
 
-//refactor names to work with armproto
-
 export function ProjectManager() {
+    if (!new.target) {
+        throw Error("You must use the 'new' operator to call the constructor");
+    }
     this.repo = []
 }
 

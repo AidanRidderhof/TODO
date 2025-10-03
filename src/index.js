@@ -23,7 +23,7 @@ cancel_proj.addEventListener("click", () => {
 submit_proj.addEventListener("click", () => {
     const projectName = document.querySelector("#proj-title-input")
     project_repo.addProject(projectName.value)
-    console.log(project_repo.projects[0])
+    console.log(project_repo.repo[0])
     projectName.value = ""
     console.log(project_repo)
     proj_dialogue.close()
