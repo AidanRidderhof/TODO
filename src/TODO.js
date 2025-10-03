@@ -17,9 +17,10 @@ export function TODO(title, description, duedate, priority, notes) {
     this.priority = priority
     this.notes = notes
     this.isComplete = false
+    this.id = null
 }
 
-//extract add, remove, and map functions into prototype to use for Project
+//refactor names to work with armproto
 
 export function ProjectManager() {
     this.projects = []
@@ -31,14 +32,33 @@ export function ProjectManager() {
     }
 
     this.removeProject = function(id) {
-        index = id-1
-        this.projects = this.projects.splice(index, 1)
-        mapIDS()
+        const index = id-1
+        this.projects.splice(index, 1)
+        this.mapIDS()
     }
 
     this.mapIDS = function () {
-        this.projects.map((project, i) => {
+        this.projects.forEach((project, i) => {
             project.id = i + 1
         })
     }
 }
+
+/* const ARMproto = {
+    addItem: function(object, ...args) {
+        const entry = new object(...args)
+        this.repo.push(entry)
+        mapIDS()
+    }
+
+    removeItem: function(id) {
+        index = id-1
+        this.projects = this.projects.splice(index, 1)
+        mapIDS()
+    },
+    mapIDS: function() {
+        this.projects.map((project, i) => {
+            project.id = i + 1
+        })
+    }
+} */
