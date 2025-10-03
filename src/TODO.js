@@ -19,6 +19,8 @@ export function TODO(title, description, duedate, priority, notes) {
     this.isComplete = false
 }
 
+//extract add, remove, and map functions into prototype to use for Project
+
 export function ProjectManager() {
     this.projects = []
 
