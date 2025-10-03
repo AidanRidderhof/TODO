@@ -25,5 +25,6 @@ submit_proj.addEventListener("click", () => {
     project_repo.addProject(projectName.value)
     console.log(project_repo.projects[0])
     projectName.value = ""
+    console.log(project_repo)
     proj_dialogue.close()
 });
