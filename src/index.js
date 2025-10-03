@@ -5,10 +5,15 @@ function DOMmanipulator() {
     const projectManager = new ProjectManager()
 
     const new_proj_button = document.querySelector("#new-proj")
-    const proj_dialogue = document.querySelector("dialog")
+    const proj_dialogue = document.querySelector("#proj-modal")
     const cancel_proj = document.querySelector("#cancel-proj")
     const submit_proj = document.querySelector("#submit-proj")
     const sidebar = document.querySelector("#sidebar")
+
+    const new_task_button = document.querySelector("#new-task")
+    const task_dialogue = document.querySelector("#task-modal")
+    const cancel_task = document.querySelector("#cancel-task")
+    const submit_task = document.querySelector("submit-task")
 
     //reveals dialogue form
     new_proj_button.addEventListener("click", () => {
@@ -37,6 +42,14 @@ function DOMmanipulator() {
         sidebar.appendChild(proj_tab)
         console.log("Im being read")
     }
+
+    new_task_button.addEventListener("click", () => {
+        task_dialogue.showModal()
+    })
+
+    cancel_task.addEventListener("click", () => {
+        task_dialogue.close()
+    })
 
 }
 
