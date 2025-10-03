@@ -34,4 +34,6 @@ body {
 
 .project-tab {
     background-color: limegreen;
+    border: solid 2px black
 }
+
