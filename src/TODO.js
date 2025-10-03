@@ -9,6 +9,18 @@ export function TODO(title, description, duedate, priority, notes) {
     this.notes = notes
     this.isComplete = false
     this.id = null
+
+    this.edit = function(title, description, duedate, priority, notes) {
+        this.title = title
+        this.description = description
+        this.duedate = duedate
+        this.priority = priority
+        this.notes = notes
+    }
+
+    this.toggleComplete = function() {
+        this.isComplete = !this.isComplete
+    }
 }
 
 export function Project(name) {
@@ -36,10 +48,11 @@ const ARMproto = {
     },
 
     removeItem: function(id) {
-        const index = id-1
+        const index = this.repo.findIndex(item => item.id === id)
+        if (index !== -1) {
         this.repo.splice(index, 1)
         this.mapIDS()
-    },
+    }},
 
     mapIDS: function() {
         this.repo.forEach((item, i) => {
