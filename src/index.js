@@ -1,4 +1,4 @@
-import { TODO } from './TODO.js'
+import { Project, TODO } from './TODO.js'
 import "./style.css";
 
 const new_proj_button = document.querySelector("#new-proj")
