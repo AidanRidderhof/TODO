@@ -6,6 +6,7 @@ const proj_dialogue = document.querySelector("dialog")
 const cancel_proj = document.querySelector("#cancel-proj")
 const submit_proj = document.querySelector("#submit-proj")
 const new_proj_form = document.querySelector("#new-proj-form")
+const sidebar = document.querySelector("#sidebar")
 
 const project_repo = new ProjectManager()
 
@@ -22,9 +23,16 @@ cancel_proj.addEventListener("click", () => {
 //submits text and closes 
 submit_proj.addEventListener("click", () => {
     const projectName = document.querySelector("#proj-title-input")
-    project_repo.addProject(projectName.value)
-    console.log(project_repo.repo[0])
+    const entry = project_repo.addProject(projectName.value)
+    appendProject(entry.name)
     projectName.value = ""
-    console.log(project_repo)
     proj_dialogue.close()
 });
+
+function appendProject(project) {
+    const proj_tab=document.createElement("div")
+    proj_tab.classList.add("project-tab")
+    proj_tab.innerText = project
+    sidebar.appendChild(proj_tab)
+    console.log("Im being read")
+}
