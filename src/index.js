@@ -75,6 +75,15 @@ function DOMmanipulator() {
         task_dialogue.close()
     }
 
+    //function that removes live class from all
+    function removeLive(elements) {
+        elements.forEach(function (btn) {
+        btn.classList.remove("live");
+    });
+    }
+
+    //function which adds live to selected
+
 }
 
 DOMmanipulator()
