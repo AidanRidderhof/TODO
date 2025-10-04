@@ -31,6 +31,8 @@ function DOMmanipulator() {
     submit_proj.addEventListener("click", () => {
         const projectName = document.querySelector("#proj-title-input")
         const entry = projectManager.addProject(projectName.value)
+        projectManager.addProject(entry)
+        console.log(projectManager.repo[0])
         appendProject(entry)
         projectName.value = ""
         proj_dialogue.close()
