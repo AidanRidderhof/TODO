@@ -14,14 +14,7 @@ function DOMmanipulator() {
     const task_dialogue = document.querySelector("#task-modal")
     const cancel_task = document.querySelector("#cancel-task")
     const submit_task = document.querySelector("new-task")
-    const new_task_form = document.querySelector("#new-task-form")
-
-    const new_task_title = document.querySelector("#task-title")
-    const new_task_description = document.querySelector("#task-description")
-    const new_task_duedate = document.querySelector("#duedate")
-
-
-    
+    const new_task_form = document.querySelector("#new-task-form")    
 
 
     //reveals dialogue form
@@ -65,14 +58,19 @@ function DOMmanipulator() {
     //WIP
     function submitTaskForm(event) {
         event.preventDefault()
-        const formData = new FormData(event.target)
-        const task = new TODO(Object.entries(formData))
+        const new_task_title = document.querySelector("#task-title")
+        const new_task_description = document.querySelector("#task-description")
+        const new_task_duedate = document.querySelector("#duedate")
+        const priority = document.querySelector("#priority")
+        const notes = document.querySelector("#notes")
+        
+
+        const task = new TODO(new_task_title.value, new_task_description.value, new_task_duedate.value, priority.value, notes.value)
 
         const task_div = document.createElement("div")
         task_div.innerText = task.description
         tasks.appendChild(task_div)
         task_dialogue.close()
-
     }
 
 }
