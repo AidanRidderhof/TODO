@@ -75,9 +75,6 @@ function DOMmanipulator() {
         const container = document.querySelectorAll('.content.live')
 
         const task = new TODO(new_task_title.value, new_task_description.value, new_task_duedate.value, priority.value, notes.value)
-        const proj_id = container.dataset.id.charAt(container.dataset.id-1)
-
-        console.log(proj_id.charAt(proj_id-1))
 
         const task_div = document.createElement("div")
         task_div.innerText = task.description
