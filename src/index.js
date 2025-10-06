@@ -1,10 +1,11 @@
 import { ProjectManager, Project, TODO } from './TODO.js'
 import { tabLogic } from '../TabHandler.js';
 import { dummydata } from './dummydata.js';
+import { getLocalStorage } from './getStorage.js';
 import "./style.css";
 
 function DOMmanipulator() {
-    const projectManager = new ProjectManager()
+    const projectManager = getLocalStorage()
     //dummydata(projectManager)
 
     //create project/sidebar vars
