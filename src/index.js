@@ -1,9 +1,11 @@
 import { ProjectManager, Project, TODO } from './TODO.js'
 import { tabLogic } from '../TabHandler.js';
+import { dummydata } from './dummydata.js';
 import "./style.css";
 
 function DOMmanipulator() {
     const projectManager = new ProjectManager()
+    dummydata(projectManager)
 
     //create project/sidebar vars
     const new_proj_button = document.querySelector("#new-proj")
