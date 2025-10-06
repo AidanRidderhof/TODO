@@ -33,6 +33,7 @@ function DOMmanipulator() {
     const cancel_task = document.querySelector("#cancel-task")
     const submit_task = document.querySelector("new-task")
     const new_task_form = document.querySelector("#new-task-form")    
+    const project_content = document.querySelector("#project-content")
 
 
     //reveals dialogue form
@@ -60,9 +61,15 @@ function DOMmanipulator() {
     function appendProject(project) {
         const proj_tab=document.createElement("button")
         proj_tab.classList.add("button")
-        proj_tab.setAttribute("data-id", project.id)
+        proj_tab.setAttribute("data-id", `tab-${project.id}`)
         proj_tab.innerText = project.name
+
+        const task_cont = document.createElement("div")
+        task_cont.classList.add("content")
+        task_cont.setAttribute('id', `tab-${project.id}`)
         sidebar.appendChild(proj_tab)
+        project_content.appendChild(task_cont)
+
         console.log("Im being read")
     }
 
