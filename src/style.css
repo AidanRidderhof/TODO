@@ -37,3 +37,13 @@ body {
     border: solid 2px black
 }
 
+.content {
+  display: none;
+}
+.button.live {
+  background: #ffe5e2;
+}
+.content.live {
+  display: block;
+}
+
