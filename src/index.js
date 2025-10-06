@@ -5,7 +5,7 @@ import "./style.css";
 
 function DOMmanipulator() {
     const projectManager = new ProjectManager()
-    dummydata(projectManager)
+    //dummydata(projectManager)
 
     //create project/sidebar vars
     const new_proj_button = document.querySelector("#new-proj")
