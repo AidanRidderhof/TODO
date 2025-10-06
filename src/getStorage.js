@@ -23,3 +23,5 @@ function domDisplay(projectManager) {
         
     }
 }
+
+//append task to dom
