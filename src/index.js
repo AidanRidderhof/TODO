@@ -4,12 +4,14 @@ import "./style.css";
 function DOMmanipulator() {
     const projectManager = new ProjectManager()
 
+    //create project/sidebar vars
     const new_proj_button = document.querySelector("#new-proj")
     const proj_dialogue = document.querySelector("#proj-modal")
     const cancel_proj = document.querySelector("#cancel-proj")
     const submit_proj = document.querySelector("#submit-proj")
     const sidebar = document.querySelector("#sidebar")
 
+    //create content/task vars
     const new_task_button = document.querySelector("#new-task")
     const task_dialogue = document.querySelector("#task-modal")
     const cancel_task = document.querySelector("#cancel-task")
@@ -42,12 +44,12 @@ function DOMmanipulator() {
     //add project tab to sidebar
     function appendProject(project) {
         const proj_tab=document.createElement("button")
-        proj_tab.classList.add("button")
+        proj_tab.classList.add("button", "live")
         proj_tab.setAttribute("data-id", `tab-${project.id}`)
         proj_tab.innerText = project.name
 
         const task_cont = document.createElement("div")
-        task_cont.classList.add("content")
+        task_cont.classList.add("content", "live")
         task_cont.setAttribute('id', `tab-${project.id}`)
         sidebar.appendChild(proj_tab)
         project_content.appendChild(task_cont)
@@ -65,6 +67,7 @@ function DOMmanipulator() {
 
     new_task_form.addEventListener("submit", submitTaskForm)
 
+    //take form data and turn into task dom element
     function submitTaskForm(event) {
         event.preventDefault()
         const new_task_title = document.querySelector("#task-title")
@@ -81,20 +84,11 @@ function DOMmanipulator() {
         container[0].appendChild(task_div)
         task_dialogue.close()
     }
-
-    //function that removes live class from all
-    function removeLive(elements) {
-        elements.forEach(function (btn) {
-        btn.classList.remove("live");
-    });
-    }
-
-    //function which adds live to selected
-
 }
 
 DOMmanipulator()
 
+//tab logic
 const tabs = document.querySelector("#content");
 tabs.addEventListener("click", function (e) {
   const id = e.target.dataset.id;
