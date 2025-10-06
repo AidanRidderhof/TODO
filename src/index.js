@@ -4,6 +4,24 @@ import "./style.css";
 function DOMmanipulator() {
     const projectManager = new ProjectManager()
 
+    /*const proj1 = projectManager.addProject("proj1")
+    const proj2 = projectManager.addProject("proj2")
+    const proj3 = projectManager.addProject("proj3")
+
+    proj1.addTODO("Dummy1", "Dummy2", "Dummy3", "Dummy4", "Dummy5")
+    proj2.addTODO("stupid1", "stupid2", "stupid3", "stupid4", "stupid5")
+    proj3.addTODO("notreal1", "notreal2", "notreal3", "notreal4", "notreal5")
+
+    const btn1 = document.createElement("button")
+    const btn2 = document.createElement("button")
+    const btn3 = document.createElement("button")
+
+    btn1.classList.add("button")*/
+
+
+
+
+
     const new_proj_button = document.querySelector("#new-proj")
     const proj_dialogue = document.querySelector("#proj-modal")
     const cancel_proj = document.querySelector("#cancel-proj")
@@ -40,8 +58,9 @@ function DOMmanipulator() {
 
     //add project tab to sidebar
     function appendProject(project) {
-        const proj_tab=document.createElement("div")
-        proj_tab.classList.add("project-tab", `project-${project.id}`)
+        const proj_tab=document.createElement("button")
+        proj_tab.classList.add("button")
+        proj_tab.setAttribute("data-id", project.id)
         proj_tab.innerText = project.name
         sidebar.appendChild(proj_tab)
         console.log("Im being read")
