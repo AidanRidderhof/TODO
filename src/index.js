@@ -91,13 +91,13 @@ function DOMmanipulator() {
         const new_task_duedate = document.querySelector("#duedate")
         const priority = document.querySelector("#priority")
         const notes = document.querySelector("#notes")
-        
+        const container = document.querySelectorAll('.content.live')
 
         const task = new TODO(new_task_title.value, new_task_description.value, new_task_duedate.value, priority.value, notes.value)
 
         const task_div = document.createElement("div")
         task_div.innerText = task.description
-        tasks.appendChild(task_div)
+        container[0].appendChild(task_div)
         task_dialogue.close()
     }
 
@@ -115,12 +115,13 @@ function DOMmanipulator() {
 DOMmanipulator()
 
 const tabs = document.querySelector("#content");
-const btns = document.querySelectorAll(".button");
-const articles = document.querySelectorAll(".content");
 tabs.addEventListener("click", function (e) {
   const id = e.target.dataset.id;
   if (id) {
     // remove selected from other buttons
+    const btns = document.querySelectorAll(".button");
+    const articles = document.querySelectorAll(".content");
+
     btns.forEach(function (btn) {
       btn.classList.remove("live");
     });
