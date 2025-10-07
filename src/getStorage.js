@@ -13,7 +13,7 @@ function domDisplay(projectManager) {
         const project_tab = document.createElement("button")
         project_tab.classList.add("button")
         project_tab.setAttribute("data-id", `tab-${project.id}`)
-        if (project==0) {
+        if (project.id==1) {
             project_tab.classList.add("live")
         }
         project_tab.innerText = project.name
@@ -30,7 +30,10 @@ function domDisplay(projectManager) {
 function appendTasks(project) {
     const project_content = document.querySelector("#project-content")
     const task_cont = document.createElement("div")
-    task_cont.classList.add("content", "live")
+    task_cont.classList.add("content")
+    if (project.id==1) {
+        task_cont.classList.add("live")
+    }
     task_cont.setAttribute('id', `tab-${project.id}`)
     project_content.appendChild(task_cont)
 
