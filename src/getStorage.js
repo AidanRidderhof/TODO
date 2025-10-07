@@ -1,8 +1,22 @@
 import { ProjectManager, Project, TODO } from './TODO.js'
 
 export function getLocalStorage() {
-    const storedObj = localStorage.getItem('projectmanager') ? localStorage.getItem('projectmanager') : new ProjectManager
-    const projectManager = JSON.parse(storedObj)
+    const storedObj = localStorage.getItem('projectmanager')
+    let projectManager
+
+    if (storedObj) {
+        const parsed = JSON.parse(storedObj)
+        projectManager = Object.assign(new ProjectManager(), parsed)
+
+        // Reattach prototypes to nested objects
+        projectManager.repo = projectManager.repo.map(p => {
+        const project = Object.assign(new Project(), p)
+        project.repo = project.repo.map(t => Object.assign(new TODO(), t))
+        return project
+        })
+    } else {
+        projectManager = new ProjectManager()
+    }
     domDisplay(projectManager)
     return(projectManager)
 }
