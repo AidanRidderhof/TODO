@@ -20,8 +20,24 @@ function domDisplay(projectManager) {
 
         const sidebar = document.querySelector("#sidebar")
         sidebar.appendChild(project_tab)
+        appendTasks(project)
         
     }
 }
 
 //append task to dom
+
+function appendTasks(project) {
+    const project_content = document.querySelector("#project-content")
+    const task_cont = document.createElement("div")
+    task_cont.classList.add("content", "live")
+    task_cont.setAttribute('id', `tab-${project.id}`)
+    project_content.appendChild(task_cont)
+
+    project.repo.forEach(task => {
+        
+        const taskdiv = document.createElement('div')
+        taskdiv.innerText=task.description
+        task_cont.appendChild(taskdiv)
+    });
+}
