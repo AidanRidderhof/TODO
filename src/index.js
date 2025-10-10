@@ -81,6 +81,8 @@ function DOMmanipulator() {
         const notes = document.querySelector("#notes")
         const container = document.querySelectorAll('.content.live')
 
+        const active_proj = querySelectorAll('.live[data-id]')
+
         const task = new TODO(new_task_title.value, new_task_description.value, new_task_duedate.value, priority.value, notes.value)
 
         const task_div = document.createElement("div")
