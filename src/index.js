@@ -6,6 +6,7 @@ import "./style.css";
 
 function DOMmanipulator() {
     const projectManager = getLocalStorage()
+    //const projectManager = new ProjectManager
     //dummydata(projectManager)
 
     //create project/sidebar vars
@@ -38,8 +39,7 @@ function DOMmanipulator() {
     submit_proj.addEventListener("click", () => {
         const projectName = document.querySelector("#proj-title-input")
         const entry = projectManager.addProject(projectName.value)
-        projectManager.addProject(entry)
-        console.log(projectManager.repo[0])
+        localStorage.setItem('projectmanager', JSON.stringify(projectManager))
         appendProject(entry)
         projectName.value = ""
         proj_dialogue.close()

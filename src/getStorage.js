@@ -58,3 +58,7 @@ function appendTasks(project) {
         task_cont.appendChild(taskdiv)
     });
 }
+
+export function commitToStorage(projectManager) {
+    localStorage.setItem('projectmanager', projectManager)
+}
