@@ -49,7 +49,7 @@ function DOMmanipulator() {
     function appendProject(project) {
         const proj_tab=document.createElement("button")
         proj_tab.classList.add("button", "live")
-        proj_tab.setAttribute("data-id", `tab-${project.id}`)
+        proj_tab.setAttribute("data-tab", `${project.id}`)
         proj_tab.innerText = project.name
 
         const task_cont = document.createElement("div")
@@ -81,7 +81,7 @@ function DOMmanipulator() {
         const notes = document.querySelector("#notes")
         const container = document.querySelectorAll('.content.live')
 
-        const active_proj = document.querySelectorAll('.live[data-id]')
+        const active_proj = document.querySelectorAll('.live[data-tab]')
         const proj_title = active_proj[0].textContent
         console.log(aaa)
 

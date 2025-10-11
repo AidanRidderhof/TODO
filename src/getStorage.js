@@ -26,7 +26,7 @@ function domDisplay(projectManager) {
         const project = projectManager.repo[p_index]
         const project_tab = document.createElement("button")
         project_tab.classList.add("button")
-        project_tab.setAttribute("data-id", `tab-${project.id}`)
+        project_tab.setAttribute("data-tab", `${project.id}`)
         if (project.id==1) {
             project_tab.classList.add("live")
         }
