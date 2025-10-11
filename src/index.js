@@ -82,11 +82,8 @@ function DOMmanipulator() {
         const container = document.querySelectorAll('.content.live')
 
         const active_proj = document.querySelectorAll('.live[data-tab]')
-        const proj_title = active_proj[0].textContent
-        console.log(aaa)
-
-
-        const task = new TODO(new_task_title.value, new_task_description.value, new_task_duedate.value, priority.value, notes.value)
+        const proj_index = active_proj[0].dataset.tab
+        const task = projectManager.repo[proj_index].addTODO(new_task_title.value, new_task_description.value, new_task_duedate.value, priority.value, notes.value)
 
         const task_div = document.createElement("div")
         task_div.innerText = task.description
