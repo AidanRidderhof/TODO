@@ -84,7 +84,7 @@ function DOMmanipulator() {
 
         const active_proj = document.querySelectorAll('.live[data-tab]')
         const proj_index = active_proj[0].dataset.tab
-        const task = projectManager.repo[proj_index].addTODO(new_task_title.value, new_task_description.value, new_task_duedate.value, priority.value, notes.value)
+        const task = projectManager.repo[proj_index-1].addTODO(new_task_title.value, new_task_description.value, new_task_duedate.value, priority.value, notes.value)
         localStorage.setItem('projectmanager', JSON.stringify(projectManager))
 
 

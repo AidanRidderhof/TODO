@@ -1,4 +1,5 @@
 import { ProjectManager, Project, TODO } from './TODO.js'
+import { makeTaskDiv } from './task_div.js'
 
 export function getLocalStorage() {
     const storedObj = localStorage.getItem('projectmanager')
