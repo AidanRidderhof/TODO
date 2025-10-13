@@ -2,6 +2,7 @@ import { ProjectManager, Project, TODO } from './TODO.js'
 import { tabLogic } from '../TabHandler.js';
 import { dummydata } from './dummydata.js';
 import { getLocalStorage } from './getStorage.js';
+import { makeTaskDiv } from './task_div.js';
 import "./style.css";
 
 function DOMmanipulator() {
