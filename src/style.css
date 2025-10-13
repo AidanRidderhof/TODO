@@ -40,6 +40,15 @@ body {
 .content {
   display: none;
 }
+
+.button {
+    align-self: center;
+    height: 35px;
+    border-radius: 10px;
+    font-size: 18px;
+    width: 95%;
+}
+
 .button.live {
   background: #ffe5e2;
 }
