@@ -6,13 +6,12 @@ export function makeTaskDiv(task) {
     const priority = task.priority
     const notes = task.notes
     const complete = task.isComplete
-    taskdiv.classList.add("content")
 
     const buttondiv = document.createElement("div")
-    const completeButton = document.querySelector("button")
+    const completeButton = document.createElement("button")
     buttondiv.appendChild(completeButton)
 
-    if (isComplete) {
+    if (complete) {
         buttondiv.classList.add("complete-todo")
     }
 
@@ -20,7 +19,7 @@ export function makeTaskDiv(task) {
         buttondiv.classList.add("incomplete-todo")
     }
 
-    taskdiv.innerHTML=`${buttondiv}<h2>${title}</h2><p>${description}</p><p>${duedate}</p><p>${notes}</p>`
+    taskdiv.innerHTML=`<h2>${title}</h2><p>${description}</p><p>${duedate}</p><p>${notes}</p>`
     if (priority=='low') {
         taskdiv.style.backgroundColor='green'
     }

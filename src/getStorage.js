@@ -54,8 +54,7 @@ function appendTasks(project) {
 
     project.repo.forEach(task => {
         
-        const taskdiv = document.createElement('div')
-        taskdiv.innerText=task.description
+        const taskdiv = makeTaskDiv(task)
         task_cont.appendChild(taskdiv)
     });
 }
