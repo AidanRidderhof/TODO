@@ -88,8 +88,7 @@ function DOMmanipulator() {
         localStorage.setItem('projectmanager', JSON.stringify(projectManager))
 
 
-        const task_div = document.createElement("div")
-        task_div.innerText = task.description
+        const task_div = makeTaskDiv(task)
         container[0].appendChild(task_div)
         task_dialogue.close()
     }
