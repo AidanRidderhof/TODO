@@ -7,19 +7,20 @@ export function makeTaskDiv(task) {
     const notes = task.notes
     const complete = task.isComplete
 
-    const buttondiv = document.createElement("div")
-    const completeButton = document.createElement("button")
-    buttondiv.appendChild(completeButton)
+    let buttondiv
 
     if (complete) {
-        buttondiv.classList.add("complete-todo")
+        buttondiv = "<div class='do-task complete-todo'><button></button></div>"
+
     }
 
     else {
-        buttondiv.classList.add("incomplete-todo")
+        buttondiv = "<div class='do-task incomplete-todo'><button></button></div>"
+
     }
 
-    taskdiv.innerHTML=`<h2>${title}</h2><p>${description}</p><p>${duedate}</p><p>${notes}</p>`
+    taskdiv.innerHTML=`${buttondiv}<div><h2>${title}</h2><p>${description}</p><p>${duedate}</p><p>${notes}</p><button class='remove'>remove</button></div>`
+    //taskdiv.appendChild(buttondiv)
     if (priority=='low') {
         taskdiv.style.backgroundColor='green'
     }
