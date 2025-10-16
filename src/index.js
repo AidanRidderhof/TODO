@@ -83,12 +83,11 @@ function DOMmanipulator() {
         const container = document.querySelectorAll('.content.live')
 
         const active_proj = document.querySelectorAll('.live[data-tab]')
-        const proj_index = active_proj[0].dataset.tab
-        const task = projectManager.repo[proj_index-1].addTODO(new_task_title.value, new_task_description.value, new_task_duedate.value, priority.value, notes.value)
+        const proj_index = active_proj[0].dataset.tab - 1
+        const task = projectManager.repo[proj_index].addTODO(new_task_title.value, new_task_description.value, new_task_duedate.value, priority.value, notes.value)
         localStorage.setItem('projectmanager', JSON.stringify(projectManager))
 
-
-        const task_div = makeTaskDiv(task)
+        const task_div = makeTaskDiv(task, projectManager, proj_index)
         container[0].appendChild(task_div)
         task_dialogue.close()
     }
@@ -97,4 +96,3 @@ function DOMmanipulator() {
 }
 
 DOMmanipulator()
-

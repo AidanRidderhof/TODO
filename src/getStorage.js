@@ -35,14 +35,13 @@ function domDisplay(projectManager) {
 
         const sidebar = document.querySelector("#sidebar")
         sidebar.appendChild(project_tab)
-        appendTasks(project)
+        appendTasks(project, projectManager, p_index)
         
     }
 }
 
 //append task to dom
-
-function appendTasks(project) {
+function appendTasks(project, projectManager, projectIndex) {
     const project_content = document.querySelector("#project-content")
     const task_cont = document.createElement("div")
     task_cont.classList.add("content")
@@ -53,12 +52,11 @@ function appendTasks(project) {
     project_content.appendChild(task_cont)
 
     project.repo.forEach(task => {
-        
-        const taskdiv = makeTaskDiv(task)
+        const taskdiv = makeTaskDiv(task, projectManager, projectIndex)
         task_cont.appendChild(taskdiv)
     });
 }
 
 export function commitToStorage(projectManager) {
-    localStorage.setItem('projectmanager', projectManager)
+    localStorage.setItem('projectmanager', JSON.stringify(projectManager))
 }
