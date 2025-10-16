@@ -56,7 +56,36 @@ body {
   display: block;
 }
 
+.content div {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.content div *{
+    margin-bottom: 0;
+}
+
+.content div>div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.content div>div:nth-child(2) button {
+    align-self: end;
+}
+
 #project-content {
     overflow-y: scroll;
 }
 
+.do-task {
+    align-self: center;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.do-task button {
+    height: 30px;
+    width: 30px;
+}
